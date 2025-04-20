@@ -52,243 +52,143 @@
         }
         
         /* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    background-color: #0000009b; /* Solid black background */
-    color: var(--color-cream); /* Ensure text/icons are visible on black */
-}
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            color: var(--color-cream);
+        }
 
-.nav-scrolled {
-    background-color: #5d4923; /* Solid black background when scrolled */
-    padding: 20px 5%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Adjusted shadow for contrast */
-}
+        .nav-scrolled {
+            background-color: #5d4923;
+            padding: 20px 5%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
 
-.logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 300;
-    color: var(--color-cream); /* Ensure logo is visible on black background */
-    letter-spacing: 0.2em;
-    text-decoration: none;
-}
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--color-cream);
+            letter-spacing: 0.2em;
+            text-decoration: none;
+        }
 
-.menu-toggle {
-    background: none;
-    border: none;
-    color: var(--color-cream); /* Ensure icon is visible on black background */
-    font-size: 24px;
-    cursor: pointer;
-}
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--color-cream);
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+        }
         
         /* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero-content {
-    text-align: center;
-    z-index: 2;
-    opacity: 0;
-    transform: translateY(20px);
-}
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.hero h1 {
-    font-size: 120px;
-    margin-bottom: 15px; /* Space between title and subtitle */
-    letter-spacing: 0.2em;
-}
+        .hero h1 {
+            font-size: 120px;
+            margin-bottom: 15px;
+            letter-spacing: 0.2em;
+        }
 
-.hero-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 24px;
-    margin-bottom: 40px; /* Space between subtitle and logo */
-}
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
 
-.hero-logo {
-    width: 300px; /* Adjust based on your image size */
-    margin: 0 auto; /* Center the logo */
-    display: block;
-}
+        .hero-logo {
+            width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
 
-.hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 1;
-}
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .hero h1 {
-        font-size: 80px;
-        margin-bottom: 10px;
-    }
+        /* Story Section */
+        .section {
+            padding: 200px 0;
+            position: relative;
+        }
 
-    .hero-subtitle {
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
+        .story-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
 
-    .hero-logo {
-        width: 250px;
-    }
-}
+        .story-content {
+            flex: 1;
+            max-width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 60px;
-        margin-bottom: 8px;
-    }
+        .story-heading {
+            font-size: 40px;
+            margin-bottom: 40px;
+            word-break: keep-all;
+            overflow-wrap: normal;
+            hyphens: none;
+        }
 
-    .hero-subtitle {
-        font-size: 18px;
-        margin-bottom: 25px;
-    }
+        .story-image-half {
+            flex: 1;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateX(20px);
+            min-height: 400px;
+        }
 
-    .hero-logo {
-        width: 200px;
-    }
-}
+        .story-image-half img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            display: block;
+            object-fit: contain;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
 
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 40px;
-        margin-bottom: 5px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    .hero-logo {
-        width: 150px;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .hero h1 {
-        font-size: 80px;
-        margin-bottom: 10px; /* Adjusted for smaller screens */
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-
-    .hero-logo {
-        width: 250px; /* Slightly smaller on medium screens */
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 60px;
-        margin-bottom: 8px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
-        margin-bottom: 25px;
-    }
-
-    .hero-logo {
-        width: 200px; /* Smaller on mobile */
-        margin-bottom: 25px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 40px;
-        margin-bottom: 5px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    .hero-logo {
-        width: 150px; /* Even smaller on very small screens */
-        margin-bottom: 20px;
-    }
-}
-        
-     /* Story Section */
-.section {
-    padding: 200px 0;
-    position: relative;
-}
-
-.story-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.story-content {
-    flex: 1;
-    max-width: 50%;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.story-heading {
-    font-size: 40px;
-    margin-bottom: 40px;
-    word-break: keep-all;
-    overflow-wrap: normal;
-    hyphens: none;
-}
-
-.story-image-half {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: translateX(20px);
-    min-height: 400px; /* Añade esta línea para asegurar visibilidad */
-}
-
-.story-image-half img {
-    width: 100%;
-    height: auto;
-    max-height: 600px; /* O el alto máximo que prefieras */
-    display: block;
-    object-fit: contain; /* Asegura que no se corte */
-    border-radius: 12px;
-    transition: transform 0.5s ease;
-}
-
-.story-image-half:hover img {
-    transform: scale(1.02);
-}
+        .story-image-half:hover img {
+            transform: scale(1.02);
+        }
         
         /* Object Section */
         .object {
@@ -351,65 +251,48 @@ nav {
             background-color: var(--color-leather);
         }
         
-/* Heritage Section */
-.heritage {
-    background-color: var(--color-cream);
-}
+        /* Heritage Section */
+        .heritage {
+            background-color: var(--color-cream);
+        }
 
-.heritage-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+        .heritage-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-.heritage-heading {
-    font-size: 40px;
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-}
+        .heritage-heading {
+            font-size: 40px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.heritage-text {
-    font-size: 20px;
-    line-height: 2;
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-}
+        .heritage-text {
+            font-size: 20px;
+            line-height: 2;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.heritage-video {
-    margin-top: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Ensures a horizontal video ratio */
-    max-width: 800px; /* Matches container width */
-    overflow: hidden;
-    border-radius: 8px; /* Subtle rounded corners for elegance */
-}
+        .heritage-video {
+            margin-top: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
 
-.heritage-video iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .heritage-heading {
-        font-size: 32px;
-    }
-
-    .heritage-text {
-        font-size: 18px;
-    }
-
-    .heritage-video {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
+        .heritage-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         
         /* Available Section */
         .available {
@@ -653,83 +536,203 @@ nav {
             height: 100%;
             object-fit: cover;
         }
-        
-        /* Media Queries */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 80px;
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
             }
-            
+
+            .story-layout, .object-container, .designer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .story-content, .story-image-half, .object-content, .object-image, .designer-content, .designer-image {
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+            }
+
+            .object-image, .designer-image {
+                height: 50vh;
+            }
+
             .section {
                 padding: 100px 0;
             }
-        }
-        
-        @media (max-width: 992px) {
-            .story, .object-container, .designer-container {
+
+            .horizontal-scroll {
+                height: auto;
+            }
+
+            .scroll-container {
                 flex-direction: column;
+                position: relative;
+                height: auto;
             }
-            
-            .story-content, .object-content, .designer-content {
+
+            .scroll-section {
                 width: 100%;
-                padding-right: 0;
-                margin-bottom: 60px;
-            }
-            
-            .story-images, .object-image, .designer-image {
-                width: 100%;
-            }
-            
-            .heritage-images {
                 flex-direction: column;
-                gap: 30px;
-                align-items: center;
+                padding: 60px 0;
             }
-            
-            .heritage-image {
+
+            .scroll-content, .scroll-image {
                 width: 100%;
-                max-width: 500px;
+                padding: 0 5%;
+            }
+
+            .scroll-image {
+                height: 40vh;
+                margin-top: 20px;
             }
         }
-        
+
         @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+
             .hero h1 {
                 font-size: 60px;
+                margin-bottom: 10px;
             }
-            
+
             .hero-subtitle {
-                font-size: 20px;
+                font-size: 18px;
+                margin-bottom: 20px;
             }
-            
+
+            .hero-logo {
+                width: 200px;
+            }
+
             .story-heading, .object-heading, .heritage-heading, .available-heading, .designer-heading {
                 font-size: 32px;
+                margin-bottom: 20px;
             }
-            
+
+            .heritage-text {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
             .designer-quote {
                 font-size: 20px;
             }
-            
+
             .section {
                 padding: 80px 0;
             }
+
+            .container {
+                padding: 0 3%;
+            }
+
+            .custom-cursor {
+                display: none; /* Disable custom cursor on mobile */
+            }
+
+            .product-panel {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .product-panel.active {
+                width: 80%;
+                max-width: 300px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .panel-toggle {
+                width: 50px;
+                height: 50px;
+            }
+
+            .panel-content {
+                padding: 60px 20px 20px;
+            }
+
+            .panel-content h3 {
+                font-size: 20px;
+            }
+
+            .panel-details p {
+                font-size: 12px;
+            }
+
+            .panel-cta {
+                font-size: 10px;
+                padding: 8px 16px;
+            }
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 40px;
+                margin-bottom: 8px;
             }
-            
+
             .hero-subtitle {
                 font-size: 16px;
+                margin-bottom: 15px;
             }
-            
-            .story-images {
-                grid-template-columns: 1fr;
+
+            .hero-logo {
+                width: 150px;
             }
-            
+
+            .story-heading, .object-heading, .heritage-heading, .available-heading, .designer-heading {
+                font-size: 24px;
+            }
+
+            .heritage-text, .available-text, .designer-bio p {
+                font-size: 14px;
+            }
+
+            .designer-quote {
+                font-size: 18px;
+            }
+
             .footer-links {
                 flex-direction: column;
                 gap: 20px;
+            }
+
+            .footer-logo {
+                font-size: 20px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-link {
+                font-size: 16px;
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+
+            .menu-link {
+                font-size: 24px;
+            }
+
+            .menu-logo {
+                font-size: 24px;
+            }
+
+            .menu-social-link {
+                font-size: 16px;
+            }
+
+            .menu-copyright {
+                font-size: 10px;
             }
         }
     </style>
@@ -752,37 +755,37 @@ nav {
     </nav>
     
     <!-- Hero Section -->
-<section class="hero" id="hero">
-    <img src="swan1.png" alt="Swan Chair Background" class="hero-image">
-    <div class="container">
-        <div class="hero-content" id="hero-content">
-            <h1>SWAN</h1>
-            <div class="hero-subtitle">La belleza descansa en el equilibrio perfecto.</div>
-            <img src="logo inicio.png" alt="MM x PILMA Logo" class="hero-logo">
+    <section class="hero" id="hero">
+        <img src="swan1.png" alt="Swan Chair Background" class="hero-image">
+        <div class="container">
+            <div class="hero-content" id="hero-content">
+                <h1>SWAN</h1>
+                <div class="hero-subtitle">La belleza descansa en el equilibrio perfecto.</div>
+                <img src="logo inicio.png" alt="MM x PILMA Logo" class="hero-logo">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Story Section -->
-<section class="section story" id="story">
-    <div class="container story-layout">
-        <div class="story-content" id="story-content">
-            <h2 class="story-heading" style="white-space: nowrap;">
-                Inspirada por el cisne.
-            </h2>
-            <p>
-                Símbolo nacional de Dinamarca, SWAN captura la esencia del diseño nórdico: refinamiento silencioso, fluidez orgánica y presencia serena.
-            </p>
-            <p>
-                Cada línea traza una intención: la calma.<br>
-                Cada material habla del tiempo: la nobleza.
-            </p>
+    <section class="section story" id="story">
+        <div class="container story-layout">
+            <div class="story-content" id="story-content">
+                <h2 class="story-heading" style="white-space: nowrap;">
+                    Inspirada por el cisne.
+                </h2>
+                <p>
+                    Símbolo nacional de Dinamarca, SWAN captura la esencia del diseño nórdico: refinamiento silencioso, fluidez orgánica y presencia serena.
+                </p>
+                <p>
+                    Cada línea traza una intención: la calma.<br>
+                    Cada material habla del tiempo: la nobleza.
+                </p>
+            </div>
+            <div class="story-image-half" id="story-image-horizontal">
+                <img src="foto story.png" alt="SWAN Chair Horizontal">
+            </div>
         </div>
-        <div class="story-image-half" id="story-image-horizontal">
-            <img src="foto story.png" alt="SWAN Chair Horizontal">
-        </div>
-    </div>
-</section>
+    </section>
     
     <!-- Object Section -->
     <section class="section object" id="object">
@@ -837,48 +840,48 @@ nav {
         </div>
     </section>
     
- <!-- Heritage Section -->
-<section class="section heritage" id="heritage">
-    <div class="container heritage-container">
-        <h2 class="heritage-heading" id="heritage-heading">Sutil herencia de la naturaleza</h2>
-        <div class="heritage-text" id="heritage-text">
-            <p>
-                Cada línea responde a algo visto:<br>
-                un relieve tallado por el tiempo,<br>
-                un gesto que se repite en la naturaleza,<br>
-                un movimiento que no se impone, sino que acompaña.
-            </p>
+    <!-- Heritage Section -->
+    <section class="section heritage" id="heritage">
+        <div class="container heritage-container">
+            <h2 class="heritage-heading" id="heritage-heading">Sutil herencia de la naturaleza</h2>
+            <div class="heritage-text" id="heritage-text">
+                <p>
+                    Cada línea responde a algo visto:<br>
+                    un relieve tallado por el tiempo,<br>
+                    un gesto que se repite en la naturaleza,<br>
+                    un movimiento que no se impone, sino que acompaña.
+                </p>
+            </div>
+            <div class="heritage-video" id="heritage-video">
+                <iframe src="https://www.youtube.com/embed/nFI2Rg334zY?start=114&end=144" allowfullscreen></iframe>
+            </div>
+            <div class="heritage-text" id="heritage-origin">
+                <p>
+                    Diseñada en Madrid.<br>
+                    Inspirada por el ritmo sereno de Costa Rica.<br>
+                    Fabricada con la pureza de lo esencial.
+                </p>
+            </div>
         </div>
-        <div class="heritage-video" id="heritage-video">
-            <iframe src="https://www.youtube.com/embed/nFI2Rg334zY?start=114&end=144" allowfullscreen></iframe>
-        </div>
-        <div class="heritage-text" id="heritage-origin">
-            <p>
-                Diseñada en Madrid.<br>
-                Inspirada por el ritmo sereno de Costa Rica.<br>
-                Fabricada con la pureza de lo esencial.
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
     
-<!-- Available Section -->
-<section class="section available" id="available">
-    <div class="container available-container">
-        <h2 class="available-heading" id="available-heading">Disponible en PILMA</h2>
-        <div class="available-text" id="available-text">
-            <p>
-                La butaca SWAN forma parte de la colección actual de PILMA, Barcelona.
-                Una casa que celebra el diseño sobrio, funcional y honesto.
-            </p>
+    <!-- Available Section -->
+    <section class="section available" id="available">
+        <div class="container available-container">
+            <h2 class="available-heading" id="available-heading">Disponible en PILMA</h2>
+            <div class="available-text" id="available-text">
+                <p>
+                    La butaca SWAN forma parte de la colección actual de PILMA, Barcelona.
+                    Una casa que celebra el diseño sobrio, funcional y honesto.
+                </p>
+            </div>
+            <a href="https://pilma.com/producto/butaca-swan-de-mindi-macizo-tapizada-en-tela-marron-o-beige/?attribute_pa_color=beige&gad_source=1&gclid=CjwKCAjwk43ABhBIEiwAvvMEBx1tv-nVcd8Zq7tunsMsMvcRkBb6fUwgg5luKw9eCHQcu_OgEM2SrRoCMTwQAvD_BwE" class="cta-button" id="cta-button">Explorar colección PILMA</a>
         </div>
-        <a href="https://pilma.com/producto/butaca-swan-de-mindi-macizo-tapizada-en-tela-marron-o-beige/?attribute_pa_color=beige&gad_source=1&gclid=CjwKCAjwk43ABhBIEiwAvvMEBx1tv-nVcd8Zq7tunsMsMvcRkBb6fUwgg5luKw9eCHQcu_OgEM2SrRoCMTwQAvD_BwE" class="cta-button" id="cta-button">Explorar colección PILMA</a>
-    </div>
-</section>
+    </section>
     
     <!-- Designer Section -->
     <section class="section designer" id="designer">
-        <div class="container designer-container">
+        <div class="container designer^.container">
             <div class="designer-content" id="designer-content">
                 <h2 class="designer-heading">Mathias Meneses</h2>
                 <div class="designer-bio">
@@ -966,11 +969,11 @@ nav {
             
             // Hero Animation
             gsap.to('#hero-content', {
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-});
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            });
             
             // Story Section Animation
             gsap.to('#story-content', {
@@ -1028,24 +1031,25 @@ nav {
             const scrollContainer = document.getElementById('scroll-container');
             const scrollWidth = scrollContainer.scrollWidth;
             
-            gsap.to(scrollContainer, {
-                scrollTrigger: {
-                    trigger: '#horizontal-scroll',
-                    start: 'top top',
-                    end: 'bottom top',
-                    pin: true,
-                    scrub: 0.5
-                },
-                x: -(scrollWidth - window.innerWidth),
-                ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-            });
+            if (window.innerWidth > 992) {
+                gsap.to(scrollContainer, {
+                    scrollTrigger: {
+                        trigger: '#horizontal-scroll',
+                        start: 'top top',
+                        end: 'bottom top',
+                        pin: true,
+                        scrub: 0.5
+                    },
+                    x: -(scrollWidth - window.innerWidth),
+                    ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                });
+            }
             
-            // Horizontal Scroll Content Animation
             gsap.utils.toArray('.scroll-content').forEach(content => {
                 gsap.to(content, {
                     scrollTrigger: {
                         trigger: content,
-                        start: 'left center',
+                        start: 'top 80%',
                         toggleActions: 'play none none none'
                     },
                     opacity: 1,
@@ -1059,7 +1063,7 @@ nav {
                 gsap.to(image, {
                     scrollTrigger: {
                         trigger: image,
-                        start: 'left center',
+                        start: 'top 80%',
                         toggleActions: 'play none none none'
                     },
                     opacity: 1,
@@ -1095,9 +1099,9 @@ nav {
                 ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
             });
             
-            gsap.to('#heritage-images', {
+            gsap.to('#heritage-video', {
                 scrollTrigger: {
-                    trigger: '#heritage-images',
+                    trigger: '#heritage-video',
                     start: 'top 80%',
                     toggleActions: 'play none none none'
                 },
@@ -1110,7 +1114,7 @@ nav {
             
             gsap.to('#heritage-origin', {
                 scrollTrigger: {
-                    trigger: '#heritage-images',
+                    trigger: '#heritage-video',
                     start: 'top 80%',
                     toggleActions: 'play none none none'
                 },
@@ -1210,9 +1214,9 @@ nav {
             });
             
             // Image hover animations
-            document.querySelectorAll('.story-image, .heritage-image').forEach(image => {
+            document.querySelectorAll('.story-image-half, .heritage-video').forEach(image => {
                 image.addEventListener('mouseenter', () => {
-                    gsap.to(image.querySelector('img'), {
+                    gsap.to(image.querySelector('img, iframe'), {
                         scale: 1.03,
                         duration: 0.5,
                         ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -1220,7 +1224,7 @@ nav {
                 });
                 
                 image.addEventListener('mouseleave', () => {
-                    gsap.to(image.querySelector('img'), {
+                    gsap.to(image.querySelector('img, iframe'), {
                         scale: 1,
                         duration: 0.5,
                         ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -1247,7 +1251,7 @@ nav {
             });
             
             // Subtle parallax for section images
-            gsap.utils.toArray('.story-image img, .object-image img, .heritage-image img, .designer-image img').forEach(img => {
+            gsap.utils.toArray('.story-image-half img, .object-image img, .designer-image img').forEach(img => {
                 gsap.to(img, {
                     scrollTrigger: {
                         trigger: img,
@@ -1411,6 +1415,10 @@ nav {
                 }
                 
                 @media (max-width: 768px) {
+                    .menu-container {
+                        padding: 60px 3%;
+                    }
+                
                     .menu-link {
                         font-size: 32px;
                     }
@@ -1419,6 +1427,28 @@ nav {
                         flex-direction: column;
                         gap: 20px;
                         align-items: center;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .menu-link {
+                        font-size: 24px;
+                    }
+                    
+                    .menu-logo {
+                        font-size: 24px;
+                    }
+                    
+                    .menu-close {
+                        font-size: 20px;
+                    }
+                    
+                    .menu-social-link {
+                        font-size: 16px;
+                    }
+                    
+                    .menu-copyright {
+                        font-size: 10px;
                     }
                 }
             `;
@@ -1458,150 +1488,186 @@ nav {
                 }
             );
             
-            // Scroll progress indicator (keep this only once)
-const progressBar = document.createElement('div');
-progressBar.classList.add('scroll-progress');
-
-const progressStyle = document.createElement('style');
-progressStyle.textContent = `
-    .scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: var(--color-leather);
-        z-index: 1001;
-        transition: width 0.1s ease;
-    }
-`;
-
-document.head.appendChild(progressStyle);
-document.body.appendChild(progressBar);
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const scrollHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    
-    progressBar.style.width = `${scrollPercentage}%`;
-});
-
-// Product details panel
-const productPanel = document.createElement('div');
-productPanel.classList.add('product-panel');
-productPanel.innerHTML = `
-    <div class="panel-toggle">
-        <i class="fas fa-plus"></i>
-    </div>
-    <div class="panel-content">
-        <h3>SWAN</h3>
-        <div class="panel-details">
-            <p>Butaca de alto diseño</p>
-            <p>Diseñada por Mathias Meneses</p>
-            <p>Exclusiva de PILMA</p>
-        </div>
-        <a href="https://pilma.com/producto/butaca-swan-de-mindi-macizo-tapizada-en-tela-marron-o-beige/?attribute_pa_color=beige&gad_source=1&gclid=CjwKCAjwk43ABhBIEiwAvvMEBx1tv-nVcd8Zq7tunsMsMvcRkBb6fUwgg5luKw9eCHQcu_OgEM2SrRoCMTwQAvD_BwE" class="panel-cta" target="_blank" rel="noopener noreferrer">Consultar disponibilidad</a>
-    </div>
-`;
-
-const panelStyle = document.createElement('style');
-panelStyle.textContent = `
-    .product-panel {
-        position: fixed;
-        bottom: 40px;
-        right: 40px;
-        width: 60px;
-        height: 60px;
-        background-color: var(--color-charcoal);
-        color: var(--color-cream);
-        border-radius: 30px;
-        overflow: hidden;
-        z-index: 1000;
-        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    
-    .product-panel.active {
-        width: 300px;
-        height: auto;
-        border-radius: 10px;
-    }
-    
-    .panel-toggle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1;
-        transition: transform 0.3s ease;
-    }
-    
-    .product-panel.active .panel-toggle {
-        transform: rotate(45deg);
-    }
-    
-    .panel-content {
-        padding: 70px 30px 30px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    
-    .product-panel.active .panel-content {
-        opacity: 1;
-    }
-    
-    .panel-content h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .panel-details {
-        margin-bottom: 20px;
-    }
-    
-    .panel-details p {
-        margin-bottom: 10px;
-        font-size: 14px;
-    }
-    
-    .panel-cta {
-        display: inline-block;
-        padding: 10px 20px;
-        border: 1px solid var(--color-cream);
-        color: var(--color-cream);
-        text-decoration: none;
-        font-size: 12px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-    }
-    
-    .panel-cta:hover {
-        background-color: var(--color-cream);
-        color: var(--color-charcoal);
-    }
-`;
-
-document.head.appendChild(panelStyle);
-document.body.appendChild(productPanel);
-
-const panelToggle = productPanel.querySelector('.panel-toggle');
-panelToggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent the click from bubbling up
-    productPanel.classList.toggle('active');
-});
-
-// Ensure the "Consultar disponibilidad" link works
-const panelCta = productPanel.querySelector('.panel-cta');
-panelCta.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent interference from other click events
-    // The default behavior (navigating to the href) should work due to the <a> tag
-});
+            // Scroll progress indicator
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('scroll-progress');
+            
+            const progressStyle = document.createElement('style');
+            progressStyle.textContent = `
+                .scroll-progress {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: var(--color-leather);
+                    z-index: 1001;
+                    transition: width 0.1s ease;
+                }
+            `;
+            
+            document.head.appendChild(progressStyle);
+            document.body.appendChild(progressBar);
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const scrollHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                progressBar.style.width = `${scrollPercentage}%`;
+            });
+            
+            // Product details panel
+            const productPanel = document.createElement('div');
+            productPanel.classList.add('product-panel');
+            productPanel.innerHTML = `
+                <div class="panel-toggle">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="panel-content">
+                    <h3>SWAN</h3>
+                    <div class="panel-details">
+                        <p>Butaca de alto diseño</p>
+                        <p>Diseñada por Mathias Meneses</p>
+                        <p>Exclusiva de PILMA</p>
+                    </div>
+                    <a href="https://pilma.com/producto/butaca-swan-de-mindi-macizo-tapizada-en-tela-marron-o-beige/?attribute_pa_color=beige&gad_source=1&gclid=CjwKCAjwk43ABhBIEiwAvvMEBx1tv-nVcd8Zq7tunsMsMvcRkBb6fUwgg5luKw9eCHQcu_OgEM2SrRoCMTwQAvD_BwE" class="panel-cta" target="_blank" rel="noopener noreferrer">Consultar disponibilidad</a>
+                </div>
+            `;
+            
+            const panelStyle = document.createElement('style');
+            panelStyle.textContent = `
+                .product-panel {
+                    position: fixed;
+                    bottom: 40px;
+                    right: 40px;
+                    width: 60px;
+                    height: 60px;
+                    background-color: var(--color-charcoal);
+                    color: var(--color-cream);
+                    border-radius: 30px;
+                    overflow: hidden;
+                    z-index: 1000;
+                    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+                
+                .product-panel.active {
+                    width: 300px;
+                    height: auto;
+                    border-radius: 10px;
+                }
+                
+                .panel-toggle {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    z-index: 1;
+                    transition: transform 0.3s ease;
+                }
+                
+                .product-panel.active .panel-toggle {
+                    transform: rotate(45deg);
+                }
+                
+                .panel-content {
+                    padding: 70px 30px 30px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .product-panel.active .panel-content {
+                    opacity: 1;
+                }
+                
+                .panel-content h3 {
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
+                
+                .panel-details {
+                    margin-bottom: 20px;
+                }
+                
+                .panel-details p {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+                
+                .panel-cta {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    border: 1px solid var(--color-cream);
+                    color: var(--color-cream);
+                    text-decoration: none;
+                    font-size: 12px;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    transition: all 0.3s ease;
+                }
+                
+                .panel-cta:hover {
+                    background-color: var(--color-cream);
+                    color: var(--color-charcoal);
+                }
+                
+                @media (max-width: 768px) {
+                    .product-panel {
+                        bottom: 20px;
+                        right: 20px;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    
+                    .product-panel.active {
+                        width: 80%;
+                        max-width: 300px;
+                        right: 10px;
+                        bottom: 10px;
+                    }
+                    
+                    .panel-toggle {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    
+                    .panel-content {
+                        padding: 60px 20px 20px;
+                    }
+                    
+                    .panel-content h3 {
+                        font-size: 20px;
+                    }
+                    
+                    .panel-details p {
+                        font-size: 12px;
+                    }
+                    
+                    .panel-cta {
+                        font-size: 10px;
+                        padding: 8px 16px;
+                    }
+                }
+            `;
+            
+            document.head.appendChild(panelStyle);
+            document.body.appendChild(productPanel);
+            
+            const panelToggle = productPanel.querySelector('.panel-toggle');
+            panelToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                productPanel.classList.toggle('active');
+            });
+            
+            const panelCta = productPanel.querySelector('.panel-cta');
+            panelCta.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
         }
     </script>
 </body>
