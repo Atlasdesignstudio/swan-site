@@ -1207,23 +1207,23 @@ gsap.to('#heritage-origin', {
             });
             
             // Image hover animations
-            document.querySelectorAll('.story-image, .heritage-image').forEach(image => {
-                image.addEventListener('mouseenter', () => {
-                    gsap.to(image.querySelector('img'), {
-                        scale: 1.03,
-                        duration: 0.5,
-                        ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                    });
-                });
-                
-                image.addEventListener('mouseleave', () => {
-                    gsap.to(image.querySelector('img'), {
-                        scale: 1,
-                        duration: 0.5,
-                        ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                    });
-                });
-            });
+document.querySelectorAll('.story-image').forEach(image => {
+    image.addEventListener('mouseenter', () => {
+        gsap.to(image.querySelector('img'), {
+            scale: 1.03,
+            duration: 0.5,
+            ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        });
+    });
+
+    image.addEventListener('mouseleave', () => {
+        gsap.to(image.querySelector('img'), {
+            scale: 1,
+            duration: 0.5,
+            ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        });
+    });
+});
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1244,18 +1244,18 @@ gsap.to('#heritage-origin', {
             });
             
             // Subtle parallax for section images
-            gsap.utils.toArray('.story-image img, .object-image img, .heritage-image img, .designer-image img').forEach(img => {
-                gsap.to(img, {
-                    scrollTrigger: {
-                        trigger: img,
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: true
-                    },
-                    y: -20,
-                    ease: 'none'
-                });
-            });
+gsap.utils.toArray('.story-image img, .object-image img, .designer-image img').forEach(img => {
+    gsap.to(img, {
+        scrollTrigger: {
+            trigger: img,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+        },
+        y: -20,
+        ease: 'none'
+    });
+});
             
             // CTA button hover
             const ctaButton = document.getElementById('cta-button');
