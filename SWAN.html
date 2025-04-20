@@ -390,24 +390,9 @@ nav {
 
 .heritage-video iframe {
     width: 100%;
-    height: 100%;
+    height: 450px; /* Explicit height: 800px * (9/16) = 450px */
     border: none;
     display: block; /* Prevent extra spacing */
-}
-
-/* Fallback link styling */
-.heritage-video-fallback {
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    color: var(--color-leather);
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-
-.heritage-video-fallback:hover {
-    text-decoration: underline;
 }
 
 /* Responsive adjustments */
@@ -423,6 +408,11 @@ nav {
     .heritage-video {
         width: 100%;
         max-width: 100%;
+    }
+
+    .heritage-video iframe {
+        height: calc(100vw * 9 / 16); /* Maintain 16:9 ratio on smaller screens */
+        max-height: 450px;
     }
 }
 
@@ -872,9 +862,6 @@ nav {
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         </div>
-        <a href="https://www.youtube.com/watch?v=nFI2Rg334zY" class="heritage-video-fallback" target="_blank" rel="noopener noreferrer">
-            Ver el video en YouTube
-        </a>
         <div class="heritage-text" id="heritage-origin">
             <p>
                 Diseñada en Madrid.<br>
