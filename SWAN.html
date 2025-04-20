@@ -382,8 +382,6 @@ nav {
     width: 100%;
     max-width: 800px; /* Matches container width */
     aspect-ratio: 16 / 9; /* Ensures a horizontal video ratio */
-    opacity: 0; /* Start hidden for animation */
-    transform: translateY(20px);
     border-radius: 8px; /* Subtle rounded corners */
     overflow: hidden;
     position: relative;
@@ -397,10 +395,19 @@ nav {
     display: block; /* Prevent extra spacing */
 }
 
-/* Fallback to ensure visibility if animation fails */
-.heritage-video.visible {
-    opacity: 1;
-    transform: none;
+/* Fallback link styling */
+.heritage-video-fallback {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    color: var(--color-leather);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.heritage-video-fallback:hover {
+    text-decoration: underline;
 }
 
 /* Responsive adjustments */
@@ -846,7 +853,7 @@ nav {
         </div>
     </section>
     
- <!-- Heritage Section -->
+<!-- Heritage Section -->
 <section class="section heritage" id="heritage">
     <div class="container heritage-container">
         <h2 class="heritage-heading" id="heritage-heading">Sutil herencia de la naturaleza</h2>
@@ -859,13 +866,15 @@ nav {
             </p>
         </div>
         <div class="heritage-video" id="heritage-video">
-            <iframe src="https://www.youtube.com/embed/nFI2Rg334zY?enablejsapi=1&rel=0&showinfo=0" 
+            <iframe src="https://www.youtube.com/embed/nFI2Rg334zY?rel=0" 
                     title="Swan Chair Inspiration Video"
                     allowfullscreen
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    style="width:100%; height:100%;"></iframe>
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         </div>
+        <a href="https://www.youtube.com/watch?v=nFI2Rg334zY" class="heritage-video-fallback" target="_blank" rel="noopener noreferrer">
+            Ver el video en YouTube
+        </a>
         <div class="heritage-text" id="heritage-origin">
             <p>
                 Diseñada en Madrid.<br>
@@ -1107,22 +1116,6 @@ gsap.to('#heritage-text', {
     duration: 0.6,
     delay: 0.1,
     ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-});
-
-gsap.to('#heritage-video', {
-    scrollTrigger: {
-        trigger: '#heritage-video',
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-    },
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    delay: 0.2,
-    ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-    onComplete: () => {
-        document.getElementById('heritage-video').classList.add('visible');
-    }
 });
 
 gsap.to('#heritage-origin', {
